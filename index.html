@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You 🍯</title>
+    <style>
+        body { text-align: center; font-family: 'Comic Sans MS', cursive; background-color: #fff9e6; margin: 0; padding-top: 50px; overflow: hidden; }
+        img { width: 250px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        h1 { color: #d4a017; margin-top: 20px; padding: 0 20px; }
+        .btn-container { margin-top: 30px; position: relative; height: 100px; }
+        button { padding: 15px 35px; font-size: 1.2rem; cursor: pointer; border-radius: 50px; border: none; transition: 0.3s; font-weight: bold; }
+        #yesBtn { background-color: #ffcc00; color: #5c4033; }
+        #noBtn { background-color: #ff6666; color: white; position: absolute; left: 50%; transform: translateX(20px); }
+    </style>
+</head>
+<body>
+
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHYwdWl6bmNxdWk0ZzR3eG0wd3R6eG5ueXN6eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/H8XpZ3z56tU8o/giphy.gif" alt="Pooh">
+    
+    <h1>Will you forgive me? 🥺</h1>
+
+    <div class="btn-container">
+        <button id="yesBtn" onclick="sendWhatsApp()">Yes</button>
+        <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 150) + 50;
+            const noBtn = document.getElementById('noBtn');
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function sendWhatsApp() {
+            // Replace with your number!
+            const phoneNumber = "917278515695"; 
+            const message = "I forgive you! ❤️";
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+            alert("Yay! Check your WhatsApp! ❤️");
+        }
+    </script>
